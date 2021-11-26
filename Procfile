@@ -1,1 +1,1 @@
-web: gunicorn restaurant.wsgi:application
+web: gunicorn reservewisely.wsgi:application
