@@ -28,24 +28,3 @@ class Meals(models.Model):
 
     def __str__(self):
         return str(self.name)
-
-
-class Booking(models.Model):
-    """
-    Customer can reserve a table
-    """
-    visitor_name = models.CharField(max_length=50)
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
-    phone_number = models.IntegerField()
-    no_of_people = models.IntegerField()
-    date = models.DateField()
-    time = models.TimeField()
-
-    class Meta:
-        """
-        Class Meta
-        """
-        unique_together = [['customer_name', 'date']]
-
-    def __str__(self):
-        return str(self.customer_name)
